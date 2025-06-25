@@ -1,0 +1,312 @@
+/* Modern RAG Pipeline Visualization Styles */
+
+.app-layout {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.app-header {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0 24px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  height: 100%;
+}
+
+.header-icon {
+  font-size: 24px;
+  color: white;
+}
+
+.app-content {
+  padding: 24px;
+  min-height: calc(100vh - 64px - 70px);
+}
+
+.content-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 0;
+}
+
+.query-card, .pipeline-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border-radius: 16px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  height: fit-content;
+}
+
+.query-section {
+  padding: 32px;
+}
+
+.query-title, .pipeline-title {
+  margin-bottom: 24px !important;
+  color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.query-title .anticon, .pipeline-title .anticon {
+  color: #1890ff;
+}
+
+.query-input {
+  margin-bottom: 24px;
+  border-radius: 8px;
+  border: 2px solid #f0f0f0;
+  transition: all 0.3s ease;
+  font-size: 16px;
+  resize: vertical;
+}
+
+.query-input:focus,
+.query-input:hover {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+.query-input .ant-input {
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-start;
+}
+
+.query-button {
+  height: 48px;
+  padding: 0 32px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 16px;
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  border: none;
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.query-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(24, 144, 255, 0.4);
+}
+
+.query-button:active {
+  transform: translateY(0);
+}
+
+.loading-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 48px 32px;
+  gap: 16px;
+}
+
+.loading-text {
+  color: #666;
+  font-size: 16px;
+}
+
+/* Pipeline Visualization Styles */
+.pipeline-card {
+  padding: 32px;
+}
+
+.pipeline-container {
+  margin-top: 24px;
+}
+
+.pipeline-timeline {
+  position: relative;
+}
+
+.timeline-item {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 24px;
+}
+
+.timeline-marker {
+  position: relative;
+  z-index: 2;
+  background: white;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  margin-top: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-connector {
+  position: absolute;
+  left: 15px;
+  top: 40px;
+  width: 2px;
+  height: 24px;
+  background: linear-gradient(to bottom, #52c41a, #1890ff);
+  z-index: 1;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.pipeline-step-card {
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+}
+
+.pipeline-step-card:hover {
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  transform: translateY(-2px);
+}
+
+.step-header {
+  margin-bottom: 12px;
+}
+
+.step-content {
+  color: #666;
+  line-height: 1.6;
+}
+
+.rag-item {
+  margin-bottom: 8px;
+  padding: 8px;
+  background: #f8f9fa;
+  border-radius: 6px;
+  border-left: 3px solid #1890ff;
+}
+
+.empty-pipeline {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 32px;
+  text-align: center;
+  gap: 16px;
+}
+
+.app-footer {
+  background: rgba(255, 255, 255, 0.1) !important;
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+  padding: 16px 24px;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+  .content-container {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    padding: 16px;
+  }
+  
+  .content-container {
+    padding: 16px 0;
+  }
+  
+  .query-section, .pipeline-card {
+    padding: 24px 20px;
+  }
+  
+  .button-group {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .query-button {
+    width: 100%;
+  }
+  
+  .timeline-item {
+    flex-direction: column;
+  }
+  
+  .timeline-marker {
+    margin-bottom: 12px;
+    margin-right: 0;
+  }
+  
+  .timeline-connector {
+    display: none;
+  }
+}
+
+/* Animation for pipeline steps */
+.pipeline-step-card {
+  animation: slideInRight 0.6s ease-out;
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Staggered animation for timeline items */
+.timeline-item:nth-child(1) .pipeline-step-card { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) .pipeline-step-card { animation-delay: 0.2s; }
+.timeline-item:nth-child(3) .pipeline-step-card { animation-delay: 0.3s; }
+.timeline-item:nth-child(4) .pipeline-step-card { animation-delay: 0.4s; }
+
+/* Smooth transitions */
+* {
+  transition: all 0.2s ease;
+}
+
+/* Custom scrollbar */
+.pipeline-container::-webkit-scrollbar {
+  width: 6px;
+}
+
+.pipeline-container::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 3px;
+}
+
+.pipeline-container::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+  border-radius: 3px;
+}
+
+.pipeline-container::-webkit-scrollbar-thumb:hover {
+  background: #a8a8a8;
+}
